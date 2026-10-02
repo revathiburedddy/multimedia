@@ -1,0 +1,162 @@
+/* ===== Theme ===== */
+:root {
+    --bg: #1a1a1a;
+    --bg-dark: #000000;
+    --card: #2a2a2a;
+    --red: #d7263d;
+    --red-dark: #8b0f1f;
+    --accent: #f5deb3;   /* beige */
+    --text: #f8efe2;
+    --muted: #d9c9b3;
+}
+
+/* ===== Reset ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== Page ===== */
+body {
+    background: linear-gradient(180deg, #2b0509 0%, var(--bg) 35%, var(--bg-dark) 100%);
+    background-attachment: fixed;
+    color: var(--text);
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.7;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+}
+
+/* ===== Headings ===== */
+h1 {
+    text-align: center;
+    color: var(--accent);
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    padding-bottom: 14px;
+    border-bottom: 4px solid var(--red);
+}
+
+h2 {
+    color: var(--accent);
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    margin: 50px 0 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--red);
+}
+
+h3 {
+    color: var(--accent);
+    font-size: 1.35rem;
+    margin: 40px 0 14px;
+    padding-left: 12px;
+    border-left: 5px solid var(--red);
+}
+
+h4 {
+    color: var(--accent);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 18px 0 6px;
+    text-transform: capitalize;
+}
+
+/* ===== Text ===== */
+p {
+    color: var(--muted);
+    width: 100%;
+    max-width: none;
+    margin: 14px 0 0;
+    text-align: justify;
+}
+
+h1 + p {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 75ch;
+}
+
+/* ===== Audio ===== */
+audio {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 30px;
+    accent-color: var(--red);
+    filter: sepia(0.3) saturate(1.2);
+}
+
+/* ===== Images & Video ===== */
+img,
+video {
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    vertical-align: top;
+    background: var(--bg-dark);
+    border: 2px solid var(--red-dark);
+}
+
+/* Poster images (overrides the height/width attributes in HTML) */
+img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    float: left;
+    margin: 0 16px 16px 0;
+}
+
+/* Trailers sit next to the poster */
+video {
+    float: left;
+    width: calc(100% - 232px);
+    min-width: 0;
+    height: 300px;
+    margin-bottom: 16px;
+    object-fit: cover;
+    background: #000;
+}
+
+h2,
+h3,
+h4,
+p {
+    clear: both;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 520px) {
+    body {
+        padding: 24px 16px 60px;
+    }
+
+    img {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 260px;
+        height: auto;
+        aspect-ratio: 2 / 3;
+        margin: 0 0 16px;
+    }
+
+    video {
+        float: none;
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    audio {
+        max-width: 100%;
+    }
+}
